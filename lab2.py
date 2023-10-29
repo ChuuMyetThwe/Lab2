@@ -1,4 +1,4 @@
-
+import statistics
 def display_main_menu():
     print("Enter some numbers separated by commas (e.g. 5, 67, 32)")
 
@@ -21,6 +21,10 @@ def sort_temperature(z):
     sorted_list = sorted(z)
     return sorted_list
 
+def calc_median_temperature(z):
+    median = statistics.median(z)
+    return median
+
 def main():
     display_main_menu()
     num_list = get_user_input()
@@ -29,6 +33,7 @@ def main():
     print("Maximum:", str(max_val))
     sorted_list = sort_temperature(num_list)
     print("Sorted Temperature: ", sorted_list)
+    median_val = calc_median_temperature(num_list)
 
 if __name__ == "__main__":
     main()
